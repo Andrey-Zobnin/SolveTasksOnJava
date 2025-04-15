@@ -1,28 +1,21 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class MatrixCounter {
-    public static void main(String argc) {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
         int m = scanner.nextInt();
-        int[][] matrix = new int[n][m];
+        int count = 0;
 
+        // Читаем всю матрицу и сразу считаем элементы
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < m; j++) {
-                matrix[i][j] = scanner.nextInt();
-                // matrix inntput
+                if (scanner.nextInt() == scanner.nextInt()) { // ❌ Ошибка! Сравниваем два следующих числа вместо K
+                    count++;
+                }
             }
         }
-        int count = scanner.nextInt();
-        int counter = 0;
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-               if (matrix[i][j] == count) {
-                   counter++;
-               }
 
-            }
-        }
-        System.out.println(counter);
+        System.out.println(count);
     }
 }
