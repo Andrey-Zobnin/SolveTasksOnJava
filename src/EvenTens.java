@@ -22,7 +22,7 @@ public class EvenTens {
         }
         System.out.println();
 
-        // count elems
+        // count elements -- count init 0
         int count = 0;
         for (int num : massive) {
             int tensDigit = (num / 10) % 10; // Получаем вторую цифру (число десятков)
